@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# coding=utf-8
+'''
+@Author: ArlenCai
+@Date: 2020-06-17 18:01:23
+@LastEditTime: 2020-06-17 20:36:10
+'''
 # dummy converters throw warnings method encountered
 import tensorrt as trt
 from .dummy_converters import *
@@ -12,11 +19,8 @@ from .Conv1d import *
 from .Conv2d import *
 from .ConvTranspose import *
 from .ConvTranspose2d import *
-from .Identity import *
 from .Linear import *
 from .LogSoftmax import *
-from .ReLU import *
-from .ReLU6 import *
 from .activation import *
 from .adaptive_avg_pool2d import *
 from .adaptive_max_pool2d import *
