@@ -138,7 +138,7 @@ if __name__ == '__main__':
         with open(args.output, 'a+') as f:
             f.write(line + '\n')
     
-    print('NUM_TESTS: %d' % num_tests)
-    print('NUM_SUCCESSFUL_CONVERSION: %d' % num_success)
-    print('NUM_FAILED_CONVERSION: %d' % num_error)
-    print('NUM_ABOVE_TOLERANCE: %d' % num_tolerance)
+    # print('NUM_TESTS: %d' % num_tests)
+    # print('NUM_SUCCESSFUL_CONVERSION: %d' % num_success)
+    # print('NUM_FAILED_CONVERSION: %d' % num_error)
+    # print('NUM_ABOVE_TOLERANCE: %d' % num_tolerance)
