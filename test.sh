@@ -1,3 +1,8 @@
+###
+ # @Author: ArlenCai
+ # @Date: 2020-06-17 18:01:23
+ # @LastEditTime: 2020-06-23 20:43:56
+### 
 #!/bin/bash
 
 OUTPUT_FILE=$1
@@ -28,3 +33,12 @@ python3 -m torch2trt.test -o $OUTPUT_FILE --name vgg13_bn --include=torch2trt.te
 python3 -m torch2trt.test -o $OUTPUT_FILE --name vgg16_bn --include=torch2trt.tests.torchvision.classification
 python3 -m torch2trt.test -o $OUTPUT_FILE --name vgg19_bn --include=torch2trt.tests.torchvision.classification
 python3 -m torch2trt.test -o $OUTPUT_FILE --name mobilenet_v2 --include=torch2trt.tests.torchvision.classification
+
+python3 -m torch2trt.test -o $OUTPUT_FILE --name fcn_resnet50 --include=torch2trt.tests.torchvision.segmentation
+python3 -m torch2trt.test -o $OUTPUT_FILE --name fcn_resnet101 --include=torch2trt.tests.torchvision.segmentation
+
+python3 -m torch2trt.test -o $OUTPUT_FILE --name retinanet_resnet18 --include=torch2trt.tests.torchvision.detection
+python3 -m torch2trt.test -o $OUTPUT_FILE --name retinanet_resnet34 --include=torch2trt.tests.torchvision.detection
+python3 -m torch2trt.test -o $OUTPUT_FILE --name retinanet_resnet50 --include=torch2trt.tests.torchvision.detection
+python3 -m torch2trt.test -o $OUTPUT_FILE --name retinanet_resnet101 --include=torch2trt.tests.torchvision.detection
+python3 -m torch2trt.test -o $OUTPUT_FILE --name retinanet_resnet152 --include=torch2trt.tests.torchvision.detection

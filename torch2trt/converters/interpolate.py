@@ -3,7 +3,6 @@ import torch.nn as nn
 from torch2trt.torch2trt import *                                 
 from torch2trt.module_test import add_module_test
 import collections
-
                                                   
 @tensorrt_converter('torch.nn.functional.interpolate')
 @tensorrt_converter('torch.nn.functional.upsample')
@@ -13,7 +12,10 @@ def convert_interpolate(ctx):
     size = get_arg(ctx, 'size', pos=1, default=None)
     scale_factor = get_arg(ctx, 'scale_factor', pos=2, default=None)
     mode = get_arg(ctx, 'mode', pos=3, default='nearest')
-    align_corners = get_arg(ctx, 'align_corners', pos=4, default=None)
+    align_corners = get_arg(ctx, 'align_corners', pos=4, default=True)
+    if align_corners != True and mode=="bilinear":
+        print("[torch2trt] ERROR: align_corners only can be set True on TensorRT 7.0")
+        raise AssertionError
 
     input_dim = input.dim() - 2
     
@@ -49,7 +51,6 @@ def convert_interpolate(ctx):
             shape = [input.size(1)] + [shape] * input_dim
         layer.shape = shape
 
-    print(layer.shape)
 
     resize_mode = mode
     if resize_mode.lower() in ["linear","bilinear","trilinear"]:

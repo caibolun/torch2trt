@@ -3,7 +3,7 @@
 '''
 @Author: ArlenCai
 @Date: 2020-06-17 18:01:23
-@LastEditTime: 2020-06-17 20:36:10
+@LastEditTime: 2020-06-21 16:49:33
 '''
 # dummy converters throw warnings method encountered
 import tensorrt as trt
@@ -59,3 +59,4 @@ from .tanh import *
 from .transpose import *
 from .unary import *
 from .view import *
+from .layer_norm import *

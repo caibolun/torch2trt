@@ -28,6 +28,8 @@ def torch_dtype_to_trt(dtype):
         return trt.float16
     elif dtype == torch.float32:
         return trt.float32
+    elif dtype == torch.int64:
+        return trt.int32
     else:
         raise TypeError("%s is not supported by tensorrt" % dtype)
 
